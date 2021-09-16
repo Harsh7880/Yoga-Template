@@ -1,0 +1,145 @@
+@media(min-width: 782px){
+    .header .nav{
+        display: block!important;
+    }
+}
+
+@media (max-width: 991px){
+    .gallery-section .gallery-item,
+    .people-section .people-item,
+    .event-section .event-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media(max-width: 781px){
+.header .logo{
+    padding: 8px 15px;
+}
+    .header .hamburger-btn{
+        display: flex;
+        margin-right: 15px;
+    }
+    .header .nav{
+        flex: 0 0 100%;
+        max-width: 100%;
+        background-color: #ffffff;
+        border-top: 1px solid #cccccc;
+        display: none;
+    }
+    .header .nav ul li {
+        display: block;
+        margin-left: 10px;
+    }
+    .header .nav ul li a{
+        color: #555555;
+        padding: 10px 0;
+    }
+.home-section .home-content h1{
+    font-size: 60px;
+}
+
+
+}
+
+
+@media(max-width: 674px){
+     .header .container {
+         padding: 15px 0;
+     }
+    .header .button a {
+  display: none;
+   }
+   .header .logo {
+       margin-right: 150px;
+   }
+
+.home-section .slide {
+    transition: all 1.5s ease-in-out;
+}
+
+.home-section .home-content p {
+    font-size: 24px;
+    margin-top: 0px;
+}
+
+.home-section .slide.active .home-content p {
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+}
+
+@keyframes fadeInTop {
+    0% {
+        transform: translateY(-25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.home-section .home-content h1 {
+    font-size: 50px;
+    margin-top: 40px;
+}
+
+.home-section .home-content button {
+    font-size: 18px;
+    padding: 10px 30px;
+    margin-top: 25px;
+}
+/* about */
+.about {
+   margin-top: -50px; 
+   padding: 0px 20px;
+}
+.about-col-2{
+  padding: 0px 20px;
+}
+
+.about-col-1,
+.about-col-3 {
+    display: none;
+}
+
+.rows{
+    flex-direction: column;
+}
+.card {
+    flex: 100%;
+    max-width: 90%;
+    height: 500px;
+    margin-bottom: 40px;
+}
+
+   .openings {
+       margin-top: 30px;
+       background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/wallpapertip_fitness-girl-wallpaper_893035.jpg) center/cover no-repeat fixed;
+       color: #fff;
+       text-align: center;
+       clip-path: ellipse(100% 55% at 48% 44%);
+   }
+   /* Gallery Section */
+
+   .gallery-section .gallery-item {
+       flex: 0 0 100%;
+       max-width: 100%;
+       padding: 25px;
+   }
+   footer{
+       bottom: unset; 
+   }
+   .col{
+       flex-basis: 100%;
+   }
+   .col:nth-child(2),
+   .col:nth-child(3) {
+       flex-basis: 100%;
+   }
+   .col:nth-child(3){
+       display: none;
+   }
+
+}

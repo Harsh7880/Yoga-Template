@@ -1,0 +1,130 @@
+
+:root{
+    --nero: #252525;
+    --dimGray: #666;
+    --max-red: #2ae4ee;
+    --snow: #fafafa;
+    --Libre: 'Libre Franklin', sans-serif;
+    --Kaushan: 'Kaushan Script';
+    --transition: all 0.4s ease;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--Libre);
+}
+
+body{
+    line-height: 1.5;
+    font-size: 1.05rem;
+    font-weight: 200;
+    text-rendering: optimizeLegibility;
+}
+
+/* setup &  resuable stylings */
+a{
+    color: #000;
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    display: block;
+}
+li{
+    list-style-type: none;
+}
+button{
+    outline: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.container{
+    width: 94%;
+    margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6{
+    padding: 0.3rem 0;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text{
+    padding: 0.3rem 0;
+    line-height: 1.7;
+}
+.padding-y{
+    padding: 6rem 0;
+}
+.title{
+    padding: 1rem 0;
+    text-align: center;
+}
+.title h2{
+    margin: 0 0.5rem;
+    font-family: var(--Kaushan);
+    letter-spacing: 2px;
+}
+.line{
+    margin-top: 1.2rem;
+}
+.line div{
+    width: 60px;
+    height: 3px;
+    background: var(--max-red);
+    border-radius: 5px;
+}
+.line span{
+    font-size: 1.4rem;
+    margin: 0 1rem;
+    color: var(--max-red);
+}
+
+/* footer */
+footer{
+    padding: 2rem 0;
+    text-align: center;
+}
+
+
+
+
+
+
+/* #### Media Queries #### */
+
+@media screen and (min-width: 480px){
+
+    .title h2{
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+ 
+}
+
+
+
+@media screen and (min-width: 1200px){
+    /* banner */
+    .container{
+        width: 86%;
+    }
+    /* about */
+    .about-row{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
+        column-gap: 2rem;
+    }
+    .about-col-1,
+    .about-col-3{
+        display: block;
+    }
+    .about-row > div{
+        margin: 0;
+    }
+
+}

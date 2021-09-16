@@ -1,0 +1,606 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/*  Default Style */
+body{
+    margin: 0;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #f3f2f1;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:not(i){
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+:before,:after{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+.container{
+    max-width: 94%;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.rows{
+    display: flex;
+    flex-wrap: wrap;
+}
+.padding-y {
+    padding: 6rem 0;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.align-item-center{
+    align-items: center;
+}
+.section-title{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2{
+    font-size: 45px;
+    color: #000000;
+    font-weight: 700;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+header,
+section,
+footer{
+    display: block;
+    width: 100%;
+}
+/*   Header */
+.header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+
+    transition: all 0.5s ease;
+}
+.header.fixed{
+    background-color: #ffffff;
+    box-shadow: 0 0 8px #cccccc;
+}
+
+.header .logo{
+        padding: 0 15px;
+       
+}
+
+.header .logo a{
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Lato',
+    sans-serif;
+  
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+.header .fixed .logo a,
+.header.fixed .logo a{
+    color: #000000;
+}
+.header .logotext{
+    color: #fb839e;
+    font-family: 'Great Vibes' , cursive;
+}
+.header .hamburger-btn{
+    display: inline-block;
+    height: 34px;
+    width: 40px;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    display: none;
+}
+.header.fixed .hamburger-btn{
+    border-color: #000000;
+    background-color: #000000;
+}
+.header .hamburger-btn span{
+  display: block;
+  height: 1px;
+  width: 16px;
+  background-color: #ffffff;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+
+.header .hamburger-btn span:before,
+.header .hamburger-btn span:after{
+content: '';
+position: absolute;
+height: 1px;
+width: 100%;
+right: 0;
+background-color: #ffffff;
+}
+.header .hamburger-btn span:before{
+    top: -6px;
+}
+.header .hamburger-btn span:after{
+    top: 6px;
+}
+.header .nav{
+    padding: 0 15px;
+}
+.header .nav ul{
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.header .nav ul li{
+    display: inline-block;
+    margin-left: 30px;
+}
+.header .nav ul li a{
+display: block;
+padding: 25px 0;
+color: #ffffff;
+font-size: 18px;
+font-weight: 700;
+text-transform: uppercase;
+text-decoration: none;
+transition: all 0.5s ease;
+  
+}
+.header.fixed .nav ul li a{
+    color: #555555;
+}
+
+.header .button a{
+padding: 10px 30px;
+background: #2ae4ee;
+border-radius: 30px;
+font-weight: 500;
+}
+
+/*  Home Section */
+.home-section{
+    min-height: 100vh;
+    position: relative;
+}
+.home-section .slide{
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
+}
+.home-section .slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+.home-section .slide:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+.home-section .row{
+    min-height: 100vh;
+}
+.home-section .home-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+}
+.home-section .home-content p{
+font-size: 24px;
+color: #ffffff;
+margin: 0 0 15px;
+}
+.home-section .slide.active .home-content p{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+}
+@keyframes fadeInTop{
+    0%{
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.home-section .home-content h1{
+    font-size: 100px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: normal;
+    font-family: 'Great Vibes', cursive;
+
+}
+.home-section .slide.active .home-content h1{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.home-section .home-content button{
+    font-size: 20px;
+    display: inline-block;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    color: #2ae4ee;
+    padding: 7px 30px;
+    margin:  15px 0 0;
+    background: transparent;
+}
+.home-section .home-content button:hover{
+    background: #2ae4ee;
+    color: #000;
+    outline: none;
+    border: none;
+}
+.home-section .slide.active .home-content button{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+    animation-delay: 1s;
+}
+
+/* about */
+.about-row>div {
+    margin: 1.2rem 0;
+}
+
+.about-col-1,
+.about-col-3 {
+    display: none;
+}
+
+
+.card{
+      flex: 0 0 30%;
+      max-width: 30%;
+      height: 500px;
+      padding: 0 30px;
+      text-align: center;
+      background: #fff;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      border-radius: 15px;
+      display: flex;
+      flex-flow: column;
+      padding: 10px;
+
+}
+.card .img{
+    width: 220px;
+    height: 220px;
+    margin: 20px auto;
+}
+.card .img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.card .class-info{
+    width: 100%;
+}
+.card .class-info .icons {
+display: flex;
+justify-content: center;
+font-size: 21px;
+}
+.card .class-info .icons i{
+  color: #2ae4ee;
+}
+.card .class-info .icons .days ,
+.card .class-info .icons .time{
+    margin: 10px 20px;
+    color: grey;
+}
+
+.card .class-info h2{
+    font-size: 22px
+}
+.card .class-info p{
+    font-size: 14px;
+    color: grey;
+}
+.card button {
+    background: #2ae4ee;
+    margin: 30px auto;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: #000;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 10px;
+}
+
+.openings {
+   margin-top: 50px;
+   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+   url(../images/wallpapertip_fitness-girl-wallpaper_893035.jpg) center/cover no-repeat fixed;
+   color: #fff;
+   text-align: center;
+    clip-path: ellipse(100% 55% at 48% 44%);
+}
+
+
+
+    /* Gallery Section */
+
+    .gallery-section{
+        padding: 80px 0 0px;
+        margin-bottom: 100px;
+    }
+    .gallery-section .gallery-item{
+        flex:0 0 33.33%;
+        max-width: 33.33%;
+        padding: 15px;
+    }
+    .gallery-section .gallery-item-inner{
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .gallery-section .gallery-item-inner img{
+        width: 100%;
+        height: 230px;
+        transform: scale(1.1);
+        transition: all 0.5s ease;
+         border-radius: 20px;
+    }
+    .gallery-section .gallery-item-inner:hover img{
+        transform: scale(1);
+    }
+
+    /* gallery popup */
+    .gallery-popup{
+        cursor: zoom-out;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1099;
+        background-color: rgba(0,0,0,0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .gallery-popup.open{
+        display: flex;
+    }
+    .gallery-popup img.gp-img{
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        padding: 40px 0;
+    }
+    .gallery-popup .gp-container{
+        position: relative;
+        cursor: auto;
+    }
+    .gallery-popup .gp-counter{
+        display: block;
+        height: 40px;
+        color: #ffffff;
+        font-size: 16px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: 40px;
+        font-weight: bold;
+        cursor: auto;
+    }
+    .gallery-popup .gp-close{
+        display: block;
+        height: 40px;
+        width: 40px;
+        color: #ffffff;
+        font-size: 30px;
+        position: absolute;
+        right: 0;
+        top: 0; text-align: center;
+        line-height: 38px;
+        overflow: hidden;
+        cursor: zoom-out;
+    }
+    .gallery-popup .gp-controls{
+        position: absolute;
+        display: flex;
+        left: 0;
+        bottom: 0;
+        height: 40px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .gallery-popup .gp-controls .prev,
+    .gallery-popup .gp-controls .next{
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .gallery-popup .gp-controls .prev i,
+    .gallery-popup .gp-controls .next i{
+        color: #ffffff;
+        font-size: 20px;
+        display: block;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        border-radius: 2px; 
+        transition: all 0.5s ease; 
+    }
+    .gallery-popup .gp-controls .prev:hover i,
+    .gallery-popup .gp-controls .next:hover i{
+        background-color: rgba(0,0,0,0.8);
+    }
+
+
+    /* Fotter  */
+
+
+footer{
+    width: 100%;
+    background: linear-gradient(to right, #00093c,#2d0b00);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+.footer-row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.footer-row p{
+    text-align: left;
+}
+.footer-row h1 {
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col:nth-child(2),
+.col:nth-child(3){
+    flex-basis: 15%;
+}
+
+.col h3{
+    width: fit-content;
+    margin-bottom: 30px;
+    margin-left: -10px;
+    position: relative;
+}
+.col h3:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    height: 2px;
+    width: 50px;
+    background: #2ae4ee;
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+}
+footer .col ul{
+    float: left;
+}
+footer ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+footer ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px; 
+}
+form .far{
+    font-size: 15px;
+    margin-right: 10px;
+}
+form input {
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    outline: none;
+}
+form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+}
+.form button .fas{
+    font-size: 16px;
+    color: #ccc;
+}
+.social-icon .fab{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px sloid #ccc;
+    margin: 20px auto; 
+}
+.copyright{
+    text-align: center;
+}
